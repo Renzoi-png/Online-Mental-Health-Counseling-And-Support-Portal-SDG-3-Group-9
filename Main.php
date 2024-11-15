@@ -23,15 +23,16 @@
         </nav>
     </header>
 
-<main>
+    <main>
     <div class="registration-form">
+
         <h2>Registration Form</h2>
-        <form action="submit_form.php" method="post">
+        <form action="" method="post">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required value="<?= htmlspecialchars($_POST['username'] ?? '') ?>">
 
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
 
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
@@ -42,35 +43,35 @@
             <label for="dob">Date of Birth</label>
             <select id="month" name="month" required>
                 <option value="">Month</option>
-                <option value="January">January</option>
-                <option value="February">February</option>
-                <option value="March">March</option>
-                <option value="April">April</option>
-                <option value="May">May</option>
-                <option value="June">June</option>
-                <option value="July">July</option>
-                <option value="August">August</option>
-                <option value="September">September</option>
-                <option value="October">October</option>
-                <option value="November">November</option>
-                <option value="December">December</option>
+                <?php
+                $months = [
+                    "January", "February", "March", "April", "May", "June", 
+                    "July", "August", "September", "October", "November", "December"
+                ];
+                foreach ($months as $value) {
+                    $selected = (isset($_POST['month']) && $_POST['month'] === $value) ? 'selected' : '';
+                    echo "<option value='$value' $selected>$value</option>";
+                }
+                ?>
             </select>
             <select id="day" name="day" required>
                 <option value="">Day</option>
-                <script>
-                    for (let i = 1; i <= 31; i++) {
-                        document.write(`<option value="${i}">${i}</option>`);
-                    }
-                </script>
+                <?php
+                for ($i = 1; $i <= 31; $i++) {
+                    $selected = (isset($_POST['day']) && $_POST['day'] == $i) ? 'selected' : '';
+                    echo "<option value='$i' $selected>$i</option>";
+                }
+                ?>
             </select>
             <select id="year" name="year" required>
                 <option value="">Year</option>
-                <script>
-                    const currentYear = new Date().getFullYear();
-                    for (let i = currentYear; i >= 1900; i--) {
-                        document.write(`<option value="${i}">${i}</option>`);
-                    }
-                </script>
+                <?php
+                $current_year = date("Y");
+                for ($i = $current_year; $i >= 1900; $i--) {
+                    $selected = (isset($_POST['year']) && $_POST['year'] == $i) ? 'selected' : '';
+                    echo "<option value='$i' $selected>$i</option>";
+                }
+                ?>
             </select>
 
             <button type="submit">Register</button>
@@ -92,7 +93,7 @@
         </nav>
     </div>
     <div class="copyright">
-        <p>&copy; 2024 MyWebsite. All Rights Reserved.</p>
+        <p>&copy; Group 9</p>
     </div>
 </footer>
     
