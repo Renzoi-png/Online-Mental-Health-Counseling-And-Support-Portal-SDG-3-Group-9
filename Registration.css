@@ -53,3 +53,18 @@
 .registration-form button:hover {
     background: linear-gradient(45deg, #ff4500, #ff6347);
 }
+.registration-form .login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.registration-form .login-link a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #ff6347;
+    font-weight: bold;
+}
+
+.registration-form .login-link a:hover {
+    text-decoration: underline;
+}
