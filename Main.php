@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Footer.css">
     <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="Registration.css">
     <title>Main</title>
 </head>
 <body>
