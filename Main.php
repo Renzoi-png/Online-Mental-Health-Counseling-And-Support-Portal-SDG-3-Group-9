@@ -75,6 +75,9 @@
 
             <button type="submit">Register</button>
         </form>
+        <div class="login-link">
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+        </div>
     </div>
 </main>
 
