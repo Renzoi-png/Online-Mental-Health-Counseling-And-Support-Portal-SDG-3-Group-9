@@ -68,3 +68,18 @@
 .registration-form .login-link a:hover {
     text-decoration: underline;
 }
+.registration-form .login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.registration-form .login-link a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #ff6347;
+    font-weight: bold;
+}
+
+.registration-form .login-link a:hover {
+    text-decoration: underline;
+}
