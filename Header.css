@@ -22,8 +22,8 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     animation: moveClouds 10s linear infinite;
     z-index: 1000;
-    border-bottom-left-radius: 20px;  /* Rounded bottom left corner */
-    border-bottom-right-radius: 20px; /* Rounded bottom right corner */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 @keyframes moveClouds {
@@ -65,7 +65,7 @@ nav ul li a {
     padding: 10px 15px;
     display: block;
     transition: all 0.3s;
-    border-radius: 20px;  /* Adds rounding to the menu options */
+    border-radius: 20px;
 }
 
 nav ul li a:hover {
