@@ -93,7 +93,7 @@
         </nav>
     </div>
     <div class="copyright">
-        <p>&copy; Group 9</p>
+        <p>&copy; Group 9 </p>
     </div>
 </footer>
     
