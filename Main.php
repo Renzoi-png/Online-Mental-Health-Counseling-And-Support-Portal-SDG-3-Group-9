@@ -21,7 +21,7 @@
     <nav>
         <ul>
             <li><a href="Home.php">Home</a></li>
-            <li><a href="About us.php">About us</a></li>
+            <li><a href="About_us.php">About us</a></li>
         </ul>
     </nav>
 </header>
