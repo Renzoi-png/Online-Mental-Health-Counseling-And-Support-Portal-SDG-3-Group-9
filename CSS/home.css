@@ -25,7 +25,7 @@
 
 .start-now-button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 50px;
     background-color: #0000006e;
     color: #fff; 
     text-decoration: none;
@@ -34,7 +34,7 @@
     font-weight: bold;
     transition: background-color 0.3s ease;
     text-align: center;
-    margin-right: 40px;
+    margin-right: 100px;
 }
 
 .start-now-button:hover {
