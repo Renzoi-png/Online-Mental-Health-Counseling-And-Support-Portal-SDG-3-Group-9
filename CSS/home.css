@@ -34,7 +34,6 @@
     font-weight: bold;
     transition: background-color 0.3s ease;
     text-align: center;
-    margin-right: 90px;
 }
 
 .start-now-button:hover {
@@ -108,4 +107,30 @@
     background-position: center;
     margin: 0;
     padding: 0;
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.arrow {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid white;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.Button-move{
+    margin-bottom: -40px;
+    padding-right: 90px;
 }

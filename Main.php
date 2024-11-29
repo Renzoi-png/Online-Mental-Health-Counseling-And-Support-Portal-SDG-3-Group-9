@@ -22,6 +22,8 @@
         <ul>
             <li><a href="Home.php">Home</a></li>
             <li><a href="About_us.php">About us</a></li>
+            <li><a href="Login.php">Login</a></li>
+            <li><a href="Feedback.php">Feedback</a></li>
         </ul>
     </nav>
 </header>
