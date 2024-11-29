@@ -23,6 +23,7 @@
             <li><a href="#">Services</a></li>
             <li><a href="Main.php">Register</a></li>
             <li><a href="Login.php">Login</a></li>
+            <li><a href="Feedback.php">Feedback</a></li>
         </ul>
     </nav>
 </header>
@@ -39,7 +40,13 @@
                 </p>
                 <h4>Your journey to mental wellness begins here.</h4>
             </div>
-            <a href="Main.php" class="start-now-button">Click to Start</a>
+            <div class="Button-move">
+            <div class="button-container">
+                <a href="Main.php" class="start-now-button">Click to Start</a>
+                <div class="arrow"></div>
+            </div>
+            </div>
+        </div>
         </div>
     </section>
 </main>

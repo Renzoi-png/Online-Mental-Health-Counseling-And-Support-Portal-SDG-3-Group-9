@@ -23,6 +23,7 @@
             <li><a href="#">Services</a></li>
             <li><a href="Main.php">Register</a></li>
             <li><a href="Login.php">Login</a></li>
+            <li><a href="Feedback.php">Feedback</a></li>
         </ul>
     </nav>
 </header>
