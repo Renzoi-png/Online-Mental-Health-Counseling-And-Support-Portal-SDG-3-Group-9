@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="CSS/home.css">
     <title>Main</title>
 </head>
-<body class="BG1">
+<body class="BG2">
 <?php include 'Registration.php'; ?>
 
 <header>
@@ -29,25 +29,15 @@
 </header>
 
 <main>
-    <section class="about-us">
-        <h1>About Us</h1>
-        <div class="about-us-container">
-            <div class="team-member">
-                <img src="images/RENZ.jpg" alt="Team Member 1" class="team-image">
-                <p>TEST</p>
+    <section class="main-content">
+            <div class="Privacy-content">
+                <h1>Terms of Service</h1>
+                <p>
+                    Yes
+                </p>
             </div>
-            <div class="team-member">
-                <img src="JANNA.jpg" alt="Team Member 2" class="team-image">
-                <p>TEST</p>
-            </div>
-            <div class="team-member">
-                <img src="HOWARD.jpg" alt="Team Member 3" class="team-image">
-                <p>TEST</p>
-            </div>
-        </div>
     </section>
 </main>
-
 
 
 <footer>
@@ -62,6 +52,9 @@
     <div class="copyright">
         <p>&copy; Group 9</p>
     </div>
+
+
+    
 </footer>
 </body>
 </html>

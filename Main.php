@@ -72,7 +72,7 @@
         <nav class="footer-nav">
             <ul>
                 <li><a href="Privacy.php">Privacy Policy</a></li>
-                <li><a href="ToF.php">Terms of Service</a></li>
+                <li><a href="ToS.php">Terms of Service</a></li>
             </ul>
         </nav>
     </div>
