@@ -58,7 +58,7 @@
                 <br>
                 <h3>Your Rights:</h3>
                     
-                You have the right to access, correct, or delete your personal information. To do so, please contact us.
+                You have the right to access, correct, or delete your personal information.
                 <br>
                 <br>
                 <h3>Changes to This Policy:</h3>
