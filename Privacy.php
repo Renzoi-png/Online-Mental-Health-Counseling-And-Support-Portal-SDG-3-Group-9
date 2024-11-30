@@ -65,7 +65,6 @@
                     
                 We may update this policy occasionally. We will notify you of any changes by posting the new policy on our site.
                 </p>
-                <h4>yes yes</h4>
             </div>
     </section>
 </main>
@@ -76,13 +75,16 @@
         <nav class="footer-nav">
             <ul>
                 <li><a href="Privacy.php">Privacy Policy</a></li>
-                <li><a href="ToF.php">Terms of Service</a></li>
+                <li><a href="ToS.php">Terms of Service</a></li>
             </ul>
         </nav>
     </div>
     <div class="copyright">
         <p>&copy; Group 9</p>
     </div>
+
+
+
 </footer>
 </body>
 </html>
