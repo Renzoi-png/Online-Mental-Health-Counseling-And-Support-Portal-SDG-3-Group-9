@@ -34,4 +34,8 @@ function generateYears($selectedYear = '') {
 function getInputValue($key) {
     return htmlspecialchars($_POST[$key] ?? '');
 }
+
+
 ?>
+
+
