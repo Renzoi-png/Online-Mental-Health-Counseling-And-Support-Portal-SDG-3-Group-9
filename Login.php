@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="CSS/home.css" type="text/css">
     <title>Main</title>
 </head>
-<body class="BG3">
+<body class="BG3">   
 <?php include 'Registration.php'; ?>
 
 <header>   
