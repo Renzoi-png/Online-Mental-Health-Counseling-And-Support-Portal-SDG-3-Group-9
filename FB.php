@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (strlen($feedback) < 10) {
         echo "<div class='error-message'>Feedback must be at least 10 characters long.</div>";
-        return;
+        return;          
     }
 
     $sql = "INSERT INTO feedback (name, email, feedback_type, feedback) VALUES ('$name', '$email', '$feedback_type', '$feedback')";
