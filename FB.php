@@ -10,7 +10,7 @@ function generateFeedbackTypes($selectedType = '') {
 }
 
 $host = 'localhost';
-$db = 'feedback_db';
+$db = 'finalsphp';
 $user = 'root'; 
 $pass = '';
 
