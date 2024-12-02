@@ -27,7 +27,7 @@
         </ul>
     </nav>
 </header>
-
+ 
 <main>
     <section class="main-content">
             <div class="Privacy-content">
@@ -37,7 +37,7 @@
                 </p>
             </div>
     </section>
-</main>
+</main>  
 
 
 <footer>
