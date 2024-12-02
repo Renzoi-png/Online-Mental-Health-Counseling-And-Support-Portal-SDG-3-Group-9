@@ -31,6 +31,8 @@
 <main>
     <div class="registration-form">
         <h2>Registration Form</h2>
+        <form action="registrationdata.php" method="post">
+
         <form action="" method="post">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required value="<?= getInputValue('username') ?>">
