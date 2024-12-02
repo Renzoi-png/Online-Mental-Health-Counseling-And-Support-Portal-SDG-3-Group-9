@@ -34,15 +34,15 @@
         <div class="about-us-container">
             <div class="team-member">
                 <img src="images/RENZ.jpg" alt="Team Member 1" class="team-image">
-                <p>TEST</p>
+                <p>Renz R. Lopez</p>
             </div>
             <div class="team-member">
                 <img src="JANNA.jpg" alt="Team Member 2" class="team-image">
                 <p>TEST</p>
             </div>
             <div class="team-member">
-                <img src="HOWARD.jpg" alt="Team Member 3" class="team-image">
-                <p>TEST</p>
+                <img src="images/howard.jpg" alt="Team Member 3" class="team-image">
+                <p>Howard C. Guieb</p>
             </div>
         </div>
     </section>
