@@ -1,8 +1,8 @@
 <?php
-
+// Database connection
 $servername = "localhost";
-$username = "root"; 
-$password = ""; 
+$username = "root";
+$password = "";
 $dbname = "finalsphp";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -30,10 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows == 1) {
         $user = $result->fetch_assoc();
-    
+
         if (password_verify($password, $user['password'])) {
             echo "Login successful! Welcome " . $user['username'];
-            
+
         } else {
             echo "Invalid password!";
         }
