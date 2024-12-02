@@ -30,7 +30,8 @@
 
     <div class="login-form-container">
     <h2>Login</h2>
-    <form action="login.php" method="POST">
+    <form action="logindata.php" method="POST">
+
         <div class="input-group">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required value="<?= getInputValue('email') ?>">
