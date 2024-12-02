@@ -37,7 +37,7 @@
                 </p>
             </div>
     </section>
-</main>
+</main>  
 
 
 <footer>
