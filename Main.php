@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Footer.css">
-    <link rel="stylesheet" href="Header.css">
-    <link rel="stylesheet" href="Registration.css">
+    <link rel="stylesheet" href="CSS/footer.css" type="text/css">
+    <link rel="stylesheet" href="CSS/header.css" type="text/css">
+    <link rel="stylesheet" href="CSS/registration.css" type="text/css">
+    <link rel="stylesheet" href="CSS/home.css" type="text/css">
     <title>Main</title>
-</head>
-<body>
+</head> 
+<body class="BG3">
 <?php include 'Registration.php'; ?>
-    
+
 <header>
-        <div class="logo">
-            <a href="#">LOGO</a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li> 
-            </ul>
-        </nav>
-    </header>
+
+<div class="icon">
+    <img src="images/Icon.png" alt="logo" width="120" height="120">
+</div>
+
+    <nav>
+        <ul>
+            <li><a href="Home.php">Home</a></li>
+            <li><a href="About_us.php">About us</a></li>
+            <li><a href="Login.php">Login</a></li>
+            <li><a href="Feedback.php">Feedback</a></li>
+        </ul>
+    </nav>
+</header>
 
 <main>
     <div class="registration-form">
@@ -62,19 +66,19 @@
         </div>
     </div>
 </main>
-    <footer>
+
+<footer>
     <div class="footer-content">
         <nav class="footer-nav">
             <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
+                <li><a href="Privacy.php">Privacy Policy</a></li>
+                <li><a href="ToS.php">Terms of Service</a></li>
             </ul>
         </nav>
     </div>
     <div class="copyright">
-        <p>&copy; Group 9 </p>
+        <p>&copy; Group 9</p>
     </div>
 </footer>
-    
 </body>
 </html>
