@@ -1,50 +1,57 @@
 <?php
-function generateFeedbackTypes($selectedType = '') {
-    $types = ["Suggestion", "Complaint", "Inquiry", "Others"];
-    $options = "";
-    foreach ($types as $type) {
-        $selected = ($type === $selectedType) ? 'selected' : '';
-        $options .= "<option value='$type' $selected>$type</option>";
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+session_start();
+$dbHost = 'localhost';
+$dbName = 'finalsphp';
+$dbUser = 'root';
+$dbPass = '';
+
+try {
+    $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Database connection failed: " . $e->getMessage());
+}
+
+function generateFeedbackTypes() {
+    global $pdo;
+    $stmt = $pdo->query("SELECT * FROM feedback_types");
+    $options = '';
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $options .= "<option value='{$row['id']}'>{$row['type_name']}</option>";
     }
     return $options;
 }
 
-$host = 'localhost';
-$db = 'finalsphp';
-$user = 'root'; 
-$pass = '';
-
-
-$conn = new mysqli($host, $user, $pass, $db);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = trim($conn->real_escape_string($_POST['name']));
-    $email = trim($conn->real_escape_string($_POST['email']));
-    $feedback_type = trim($conn->real_escape_string($_POST['type']));
-    $feedback = trim($conn->real_escape_string($_POST['feedback']));
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "<div class='error-message'>Invalid email format.</div>";
-        return;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_SESSION['user_id'])) {
+        echo "<script>alert('You must be logged in to submit feedback.'); window.location.href = 'Login.php';</script>";
+        exit;
     }
 
-    if (strlen($feedback) < 10) {
-        echo "<div class='error-message'>Feedback must be at least 10 characters long.</div>";
-        return;          
-    }
+    $user_id = $_SESSION['user_id'];
+    $type = $_POST['type'];
+    $feedback = trim($_POST['feedback']);
 
-    $sql = "INSERT INTO feedback (name, email, feedback_type, feedback) VALUES ('$name', '$email', '$feedback_type', '$feedback')";
-    
-    if ($conn->query($sql) === TRUE) {
-        echo "<div class='success-message'>Feedback submitted successfully!</div>";
+    if (empty($type) || empty($feedback)) {
+        echo "<script>alert('All fields are required.');</script>";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        try {
+            $stmt = $pdo->prepare("INSERT INTO feedback (user_id, type, feedback) VALUES (:user_id, :type, :feedback)");
+            $stmt->bindParam(':user_id', $user_id);
+            $stmt->bindParam(':type', $type);
+            $stmt->bindParam(':feedback', $feedback);
+            $stmt->execute();
+
+            echo "<script>alert('Feedback submitted successfully!'); window.location.href = 'Feedback.php';</script>";
+        } catch (PDOException $e) {
+            echo "<script>alert('Feedback submission failed: " . $e->getMessage() . "');</script>";
+        }
     }
 }
-
-$conn->close();
 ?>

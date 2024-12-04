@@ -9,7 +9,7 @@
     <title>Main</title>
 </head>
 <body class="BG2">
-<?php include 'Registration.php'; ?>
+<?php include 'Account/Registration.php'; ?>
 
 <header>
 <div class="icon">
@@ -19,11 +19,12 @@
     <nav>
         <ul>
             <li><a href="Home.php">Home</a></li>
-            <li><a href="About_us.php">About us</a></li>
+            <li><a href="HTML/About_us.php">About us</a></li>
             <li><a href="#">Services</a></li>
-            <li><a href="Main.php">Register</a></li>
-            <li><a href="Login.php">Login</a></li>
+            <li><a href="Account/Main.php">Register</a></li>
+            <li><a href="Account/Login.php">Login</a></li>
             <li><a href="Feedback.php">Feedback</a></li>
+            <li><a href="Account/Accounts.php">Account</a></li>
         </ul>
     </nav>
 </header>
@@ -55,8 +56,8 @@
     <div class="footer-content">
         <nav class="footer-nav">
             <ul>
-                <li><a href="Privacy.php">Privacy Policy</a></li>
-                <li><a href="ToS.php">Terms of Service</a></li>
+            <li><a href="HTML/Privacy.php">Privacy Policy</a></li>
+            <li><a href="HTML/ToS.php">Terms of Service</a></li>
             </ul>
         </nav>
     </div>
