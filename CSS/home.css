@@ -1,0 +1,129 @@
+.main-content {
+    margin: -10px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    background-color: #0000006e;
+    border-radius: 25px;
+    padding:20px;
+}
+
+.text-and-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.text, .Privacy-content {
+    max-width: 70%;
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke: .1px rgb(176, 176, 176);
+    background-color: #00000039;
+    padding:20px;
+    border-radius: 25px;
+    color:antiquewhite;
+}
+.Privacy-content {
+    max-width: 100%;
+}
+
+.start-now-button {
+    display: inline-block;
+    padding: 10px 50px;
+    background-color: #0000006e;
+    color: #fff; 
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.start-now-button:hover {
+    background-color: #00b35c;
+}
+.about-us {
+    text-align: center;
+    margin-top: 150px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: 150px;
+    padding: 20px;
+    background-color: #0000006e;
+    border-radius: 25px;
+}
+
+.about-us h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.about-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.team-member {
+    text-align: center;
+    max-width: 250px;
+    margin: 25px;
+}
+
+.team-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-width: 2.5px;
+    border-color: #000000;
+}
+.BG1, .BG2, .BG3 {
+    background-image: url('../images/BG1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+.BG2 {
+    background-image: url('../images/BG2.jpg');
+}
+.BG3 {
+    background-image: url('../images/BG3.jpg');
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.arrow {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid white;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.Button-move{
+    margin-bottom: -40px;
+    padding-right: 90px;
+}
+
