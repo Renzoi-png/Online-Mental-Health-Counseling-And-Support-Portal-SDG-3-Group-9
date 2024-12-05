@@ -1,4 +1,5 @@
 <?php
+
 function generateMonths($selectedMonth = '') {
     $months = [
         "January", "February", "March", "April", "May", "June", 
@@ -34,8 +35,6 @@ function generateYears($selectedYear = '') {
 function getInputValue($key) {
     return htmlspecialchars($_POST[$key] ?? '');
 }
-
-
 ?>
 
 

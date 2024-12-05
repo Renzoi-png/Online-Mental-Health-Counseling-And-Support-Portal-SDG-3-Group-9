@@ -13,27 +13,39 @@
 <?php include 'Registration.php'; ?>
 
 <header>   
+    <div class="icon">
+        <img src="../images/Icon.png" alt="logo" width="120" height="120">
+    </div>
+    <nav> 
+        <ul>
+            <li><a href="../Home.php">Home</a></li>
+            <li><a href="../HTML/About_us.php">About us</a></li>
+            <li><a href="Main.php">Register</a></li>
+        </ul>
+    </nav>
+</header>
 
-<div class="icon">
-    <img src="../images/Icon.png" alt="logo" width="120" height="120">
-</div>
-
-        <nav> 
-            <ul>
-                <li><a href="../Home.php">Home</a></li>
-                <li><a href="../HTML/About_us.php">About us</a></li>
-                <li><a href="Main.php">Register</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="login-form-container">
+<div class="login-form-container">
     <h2>Login</h2>
-    <form action="logindata.php" method="POST">
 
+    <!-- Display error message if login failed -->
+    <?php if (isset($_GET['error'])): ?>
+        <div class="error-message">
+            <?php
+                if ($_GET['error'] == 'empty') {
+                    echo "Please enter both email and password.";
+                } elseif ($_GET['error'] == 'invalid') {
+                    echo "Invalid email or password.";
+                }
+            ?>
+        </div>
+    <?php endif; ?>
+
+    <form action="logindata.php" method="POST">
         <div class="input-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required value="<?= getInputValue('email') ?>">
+            <!-- Retain the email value if login failed -->
+            <input type="email" id="email" name="email" placeholder="Enter your email" required value="<?= isset($_GET['email']) ? htmlspecialchars($_GET['email']) : '' ?>">
         </div>
         <div class="input-group">
             <label for="password">Password</label>
@@ -41,22 +53,21 @@
         </div>
         <button type="submit" class="submit-btn">Login</button>
     </form>
+
     <div class="register-link">
         <p>Don't have an account? <a href="Main.php">Register here</a></p>
     </div>
 </div>
 
-
-    <footer>
+<footer>
     <div class="footer-content">
         <nav class="footer-nav">
             <ul>
-            <li><a href="../HTML/Privacy.php">Privacy Policy</a></li>
-            <li><a href="../HTML/ToS.php">Terms of Service</a></li>
+                <li><a href="../HTML/Privacy.php">Privacy Policy</a></li>
+                <li><a href="../HTML/ToS.php">Terms of Service</a></li>
             </ul>
         </nav>
     </div>
-
     <div class="copyright">
         <p>&copy; Group 9</p>
     </div>

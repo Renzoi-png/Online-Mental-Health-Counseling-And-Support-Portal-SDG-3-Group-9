@@ -1,4 +1,3 @@
-/* CSS for account information */
 .account-info {
     background-color: #0000006e;
     border-radius: 8px;
@@ -39,3 +38,4 @@
 .edit-button:hover {
     background-color: #ffa763;
 }
+
