@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="../CSS/Header.css" type="text/css">
     <link rel="stylesheet" href="../CSS/Home.css" type="text/css">
     <link rel="stylesheet" href="../CSS/appointment.css" type="text/css">
-    <title>Counseling Appointment</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Counseling Appointment</title>
     <script>
         $(document).ready(function() {
             $('#appointment-form').on('submit', function(e) {
@@ -19,11 +21,21 @@
                     url: 'appointmentdata.php',
                     data: formData,
                     success: function(response) {
-                        $('#response-message').html(response);
+                       
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success!',
+                            text: 'Your appointment has been set successfully.',
+                        });
                         $('#appointment-form')[0].reset();
                     },
                     error: function() {
-                        $('#response-message').html('<p style="color:red;">There was an error processing your request.</p>');
+                        
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error!',
+                            text: 'There was an error processing your request.',
+                        });
                     }
                 });
             });
@@ -65,12 +77,13 @@
                 <li><a href="../Home.php">Home</a></li>
                 <li><a href="../HTML/About_us.php">About us</a></li>
                 <li class="dropdown">
-                <a href="#">Services</a>
-                <ul class="dropdown-menu">
-                    <li><a href="../Counseling/Counseling.php">Counseling</a></li>
-                    <li><a href="../Counseling/History.php">View History</a></li>
-                    <li><a href="../Counseling/EditAppointment.php">Edit Appointments</a></li>
-                </ul>
+                    <a href="#">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../Counseling/Counseling.php">Counseling</a></li>
+                        <li><a href="../Counseling/History.php">View History</a></li>
+                        <li><a href="../Counseling/EditAppointment.php">Edit Appointments</a></li>
+                    </ul>
+                </li>
                 <li><a href="../Feedback.php">Feedback</a></li>
                 <li><a href="../Account/Accounts.php">Account</a></li>
             </ul>
@@ -80,7 +93,6 @@
     <main>
         <div class="appointment-form">
             <h2>Set Counseling Appointment</h2>
-            <div id="response-message"></div>
             <form id="appointment-form" action="" method="post">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required value="<?= htmlspecialchars($user['username']) ?>" readonly>

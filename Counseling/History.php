@@ -24,15 +24,12 @@ try {
         case 'newest':
             $order = 'DESC';
             break;
-        case 'date':
-            $order = 'ASC';
-            break;
         default:
             $order = 'DESC';
             break;
     }
 
-    $stmt = $pdo->prepare("SELECT appointment_date, appointment_time, message FROM appointments WHERE user_id = :user_id ORDER BY appointment_date $order");
+    $stmt = $pdo->prepare("SELECT appointment_date, appointment_time, message FROM appointments WHERE user_id = :user_id ORDER BY appointment_date $order, appointment_time $order");
     $stmt->bindParam(':user_id', $_SESSION['user_id']);
     $stmt->execute();
     $appointments = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -70,6 +67,7 @@ try {
                     <li><a href="../Counseling/History.php">View History</a></li>
                     <li><a href="../Counseling/EditAppointment.php">Edit Appointments</a></li>
                 </ul>
+            </li>
             <li><a href="../Feedback.php">Feedback</a></li>
             <li><a href="../Account/Accounts.php">Account</a></li>
         </ul>
@@ -86,7 +84,6 @@ try {
                 <select name="sort" id="sort">
                     <option value="newest" <?= $sortOption === 'newest' ? 'selected' : '' ?>>Newest</option>
                     <option value="oldest" <?= $sortOption === 'oldest' ? 'selected' : '' ?>>Oldest</option>
-                    <option value="date" <?= $sortOption === 'date' ? 'selected' : '' ?>>By Date</option>
                 </select>
             </form>
         </div>

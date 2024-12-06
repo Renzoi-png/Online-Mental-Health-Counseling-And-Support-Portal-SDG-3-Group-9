@@ -13,8 +13,10 @@ unset($_SESSION['errors'], $_SESSION['post_data']);
     <link rel="stylesheet" href="../CSS/Header.css" type="text/css">
     <link rel="stylesheet" href="../CSS/Registration.css" type="text/css">
     <link rel="stylesheet" href="../CSS/Home.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Main</title>
-</head> 
+</head>
 <body class="BG3">
 <?php include 'Registration.php'; ?>
 
@@ -35,13 +37,20 @@ unset($_SESSION['errors'], $_SESSION['post_data']);
     <div class="registration-form">
         <h2>Registration Form</h2>
         <?php if (!empty($errors)): ?>
-            <div class="error-messages">
+            <div class="error-messages" style="display:none;">
                 <ul>
                     <?php foreach ($errors as $error): ?>
                         <li><?= htmlspecialchars($error) ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
+            <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: '<?= htmlspecialchars(implode('\n', $errors)) ?>', // Join errors with line breaks
+                });
+            </script>
         <?php endif; ?>
         <form action="registrationdata.php" method="post">
             <label for="username">Username</label>

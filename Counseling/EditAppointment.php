@@ -31,7 +31,6 @@ try {
                     exit();
                 }
             } else {
-
                 $appointmentId = $_POST['appointment_id'];
                 $date = $_POST['date'];
                 $time = $_POST['time'];
@@ -75,6 +74,7 @@ try {
     <link rel="stylesheet" href="../CSS/appointment.css" type="text/css">
     <title>Edit Appointments</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="BG5">
 
@@ -93,6 +93,7 @@ try {
                     <li><a href="../Counseling/History.php">View History</a></li>
                     <li><a href="../Counseling/EditAppointment.php">Edit Appointments</a></li>
                 </ul>
+            </li>
             <li><a href="../Feedback.php">Feedback</a></li>
             <li><a href="../Account/Accounts.php">Account</a></li>
         </ul>
@@ -113,7 +114,7 @@ try {
                     <th>Action</th>
                 </tr>
                 <?php foreach ($appointments as $appointment): ?>
-                    <tr>
+                    <tr data-id="<?= $appointment['id'] ?>">
                         <td>
                             <input type="date" class="date" value="<?= htmlspecialchars($appointment['appointment_date']) ?>" required>
                         </td>
@@ -125,7 +126,7 @@ try {
                         </td>
                         <td>
                             <button class="update" data-id="<?= $appointment['id'] ?>">Update</button>
-                            <button class="delete" data-id="<?= $appointment['id'] ?>" onclick="return confirm('Are you sure you want to delete this appointment?');">Delete</button>
+                            <button class="delete" data-id="<?= $appointment['id'] ?>">Delete</button>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -170,7 +171,11 @@ $(document).ready(function() {
             },
             success: function(response) {
                 const result = JSON.parse(response);
-                $('#responseMessage').html(`<p style='color:${result.status === 'success' ? 'green' : 'red'};'>${result.message}</p>`);
+                Swal.fire({
+                    icon: result.status === 'success' ? 'success' : 'error',
+                    title: result.status === 'success' ? 'Success!' : 'Error!',
+                    text: result.message
+                });
             }
         });
     });
@@ -178,19 +183,35 @@ $(document).ready(function() {
     $('.delete').click(function() {
         const appointmentId = $(this).data('id');
 
-        $.ajax({
-            type: "POST",
-            url: "",
-            data: {
-                appointment_id: appointmentId,
-                delete: true
-            },
-            success: function(response) {
-                const result = JSON.parse(response);
-                $('#responseMessage').html(`<p style='color:${result.status === 'success' ? 'green' : 'red'};'>${result.message}</p>`);
-                if (result.status === 'success') {
-                    location.reload();
-                }
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "",
+                    data: {
+                        appointment_id: appointmentId,
+                        delete: true
+                    },
+                    success: function(response) {
+                        const result = JSON.parse(response);
+                        Swal.fire({
+                            icon: result.status === 'success' ? 'success' : 'error',
+                            title: result.status === 'success' ? 'Deleted!' : 'Error!',
+                            text: result.message
+                        });
+                        if (result.status === 'success') {
+                            $('tr[data-id="' + appointmentId + '"]').remove();
+                        }
+                    }
+                });
             }
         });
     });
