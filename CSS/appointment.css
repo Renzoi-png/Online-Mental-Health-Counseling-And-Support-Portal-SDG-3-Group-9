@@ -136,3 +136,100 @@ p {
     color: #ffffff;
     font-size: 16px;
 }
+
+.edit-appointments {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.edit-appointments h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.edit-appointments p {
+    text-align: center;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.edit-appointments table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.edit-appointments th, .edit-appointments td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ccc;
+    color: #ffffff;
+    padding-right: 40px;
+}
+
+.edit-appointments th {
+    background-color: #d4a6ffad;
+}
+
+.edit-appointments tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.edit-appointments input[type="date"],
+.edit-appointments input[type="time"],
+.edit-appointments textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.edit-appointments input[type="date"]:focus,
+.edit-appointments input[type="time"]:focus,
+.edit-appointments textarea:focus {
+    border-color: #d4a6ffad;
+}
+
+.edit-appointments button {
+    padding: 10px 15px;
+    background-color: #ff0077;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 5px;
+}
+
+.edit-appointments button:hover {
+    background-color: #b3005c;
+}
+
+.edit-appointments button[type="submit"] {
+    margin-right: 10px;
+}
+
+.edit-appointments button[type="submit"]:last-child {
+    background-color: #dc3545;
+    padding: 5px;
+}
+
+.edit-appointments button[type="submit"]:last-child:hover {
+    background-color: #c82333;
+    padding: 5px;
+}
+
