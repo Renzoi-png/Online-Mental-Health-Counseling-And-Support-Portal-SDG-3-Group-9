@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $dbHost = 'localhost';
 $dbName = 'finalsphp';
 $dbUser = 'root';
@@ -7,7 +9,6 @@ $dbPass = '';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
 
 try {
     $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
@@ -60,9 +61,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (!empty($errors)) {
-        foreach ($errors as $error) {
-            echo "<script>alert('$error');</script>";
-        }
+        $_SESSION['errors'] = $errors;
+        $_SESSION['post_data'] = $_POST;
+        header("Location: Main.php");
+        exit();
     }
 }
 ?>

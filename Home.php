@@ -1,12 +1,10 @@
 <?php
 session_start();
 
-
 $isLoggedIn = isset($_SESSION['user_id']);  
 
-
 $registerUrl = "Account/Main.php";  
-$servicesUrl = "Services.php"; 
+$servicesUrl = "Counseling/Counseling.php";
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +28,8 @@ $servicesUrl = "Services.php";
         <ul>
             <li><a href="Home.php">Home</a></li>
             <li><a href="HTML/About_us.php">About us</a></li>
+
+            <?php if ($isLoggedIn): ?>
             <li class="dropdown">
                 <a href="#">Services</a>
                 <ul class="dropdown-menu">
@@ -38,8 +38,16 @@ $servicesUrl = "Services.php";
                     <li><a href="Counseling/EditAppointment.php">Edit Appointments</a></li>
                 </ul>
             </li>
+            <?php endif; ?>
+
             <li><a href="Feedback.php">Feedback</a></li>
-            <li><a href="Account/Accounts.php">Account</a></li>
+
+            <?php if ($isLoggedIn): ?>
+                <li><a href="Account/Accounts.php">Account</a></li>
+            <?php else: ?>
+                <li><a href="Account/Main.php">Login/Register</a></li>
+            <?php endif; ?>
+
         </ul>
     </nav>
 </header>

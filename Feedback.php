@@ -1,7 +1,7 @@
 <?php  
 session_start(); 
 
-$is_logged_in = isset($_SESSION['user_id']);
+$isLoggedIn = isset($_SESSION['user_id']);
 ?>
 
 <!DOCTYPE html>
@@ -29,15 +29,21 @@ $is_logged_in = isset($_SESSION['user_id']);
             <li><a href="HTML/About_us.php">About us</a></li>
             <li class="dropdown">
                 <a href="#">Services</a>
-                <ul class="dropdown-menu">
-                    <li><a href="Counseling/Counseling.php">Counseling</a></li>
-                    <li><a href="Counseling/History.php">View History</a></li>
-                    <li><a href="Counseling/EditAppointment.php">Edit Appointments</a></li>
-                </ul>
+                <?php if ($isLoggedIn): ?>
+                    <ul class="dropdown-menu">
+                        <li><a href="Counseling/Counseling.php">Counseling</a></li>
+                        <li><a href="Counseling/History.php">View History</a></li>
+                        <li><a href="Counseling/EditAppointment.php">Edit Appointments</a></li>
+                    </ul>
+                <?php else: ?>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Login to access services</a></li>
+                    </ul>
+                <?php endif; ?>
             </li>
             <li><a href="Feedback.php">Feedback</a></li>
 
-            <?php if ($is_logged_in): ?>
+            <?php if ($isLoggedIn): ?>
                 <li><a href="Account/Accounts.php">Account</a></li>
             <?php else: ?>
                 <li><a href="Account/Login.php">Login</a></li>
@@ -48,7 +54,7 @@ $is_logged_in = isset($_SESSION['user_id']);
 
 <main>
 
-    <?php if (!$is_logged_in): ?>
+    <?php if (!$isLoggedIn): ?>
         <div class="login-message">
             <h2>💬 You need to log in to submit feedback!</h2>
             <p>Please <a href="Account/Login.php">log in</a> to provide feedback. We’d love to hear your thoughts!</p>

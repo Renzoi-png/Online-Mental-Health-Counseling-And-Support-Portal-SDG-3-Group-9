@@ -31,19 +31,6 @@ function generateYears($selectedYear = '') {
     }
     return $options;
 }
-function generateYears2($selectedYear = '') {
-    $currentYear = date("Y");
-    $options = "";
-    for ($i = $currentYear + 5; $i >= 1900; $i--) {
-        $selected = ($i == $selectedYear) ? 'selected' : '';
-        $options .= "<option value='$i' $selected>$i</option>";
-    }
-    return $options;
-}
-
-function getInputValue($key) {
-    return htmlspecialchars($_POST[$key] ?? '');
-}
 ?>
 
 

@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 $is_logged_in = isset($_SESSION['user_id']);  
 ?>
 
@@ -27,6 +26,8 @@ $is_logged_in = isset($_SESSION['user_id']);
         <ul>
             <li><a href="../Home.php">Home</a></li>
             <li><a href="About_us.php">About us</a></li>
+
+            <?php if ($is_logged_in): ?>
             <li class="dropdown">
                 <a href="#">Services</a>
                 <ul class="dropdown-menu">
@@ -35,14 +36,15 @@ $is_logged_in = isset($_SESSION['user_id']);
                     <li><a href="../Counseling/EditAppointment.php">Edit Appointments</a></li>
                 </ul>
             </li>
-          
-            <?php if (!$is_logged_in): ?>
             <?php endif; ?>
 
             <li><a href="../Feedback.php">Feedback</a></li>
 
-
-            <li><a href="../Account/Accounts.php">Account</a></li>
+            <?php if ($is_logged_in): ?>
+                <li><a href="../Account/Accounts.php">Account</a></li>
+            <?php else: ?>
+                <li><a href="../Account/Main.php">Login/Register</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 </header>
@@ -54,23 +56,17 @@ $is_logged_in = isset($_SESSION['user_id']);
             <div class="team-member">
                 <img src="../images/RENZ.jpg" alt="Team Member 1" class="team-image">
                 <p class ="info">Renz R. Lopez</p>
-                <p class="info">
-                    Leader
-                </p>
+                <p class="info">Leader</p>
             </div>
             <div class="team-member">
                 <img src="../images/JANNA.jpg" alt="Team Member 2" class="team-image">
                 <p class ="info">Janna D. Baluyot</p>
-                <p class="info">
-                    Member
-                </p>
+                <p class="info">Member</p>
             </div>
             <div class="team-member">
                 <img src="../images/howard.jpg" alt="Team Member 3" class="team-image">
                 <p class ="info">Howard C. Guieb</p>
-                <p class="info">
-                    Member
-                </p>
+                <p class="info">Member</p>
             </div>
         </div>
     </section>
@@ -89,6 +85,6 @@ $is_logged_in = isset($_SESSION['user_id']);
         <p>&copy; Group 9</p>
     </div>
 </footer>
+
 </body>
 </html>
-
