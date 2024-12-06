@@ -1,9 +1,4 @@
 <?php
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 session_start();
 $dbHost = 'localhost';
 $dbName = 'finalsphp';
@@ -22,7 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     if (empty($email) || empty($password)) {
-        echo "<script>alert('Email and password are required.');</script>";
+        header("Location: Login.php?error=empty&email=" . urlencode($email));
+        exit();
     } else {
         $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
         $stmt->bindParam(':email', $email);
@@ -33,9 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             header("Location: ../Home.php");
-            exit;
+            exit();
         } else {
-            echo "<script>alert('Invalid email or password.');</script>";
+            header("Location: Login.php?error=invalid&email=" . urlencode($email));
+            exit();
         }
     }
 }

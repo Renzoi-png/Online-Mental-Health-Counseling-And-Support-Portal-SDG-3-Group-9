@@ -67,3 +67,13 @@
     text-decoration: underline;
 }
 
+.error-message {
+    color: #ff0000;
+    font-size: 14px;
+    background-color: #ffe6e6;
+    border: 1px solid #ff9999;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+

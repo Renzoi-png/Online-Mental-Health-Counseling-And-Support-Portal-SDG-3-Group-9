@@ -4,7 +4,7 @@ session_start();
 $isLoggedIn = isset($_SESSION['user_id']);  
 
 $registerUrl = "Account/Main.php";  
-$servicesUrl = "Counseling/Counseling.php"; // Updated to go directly to Counseling page
+$servicesUrl = "Counseling/Counseling.php";
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +29,6 @@ $servicesUrl = "Counseling/Counseling.php"; // Updated to go directly to Counsel
             <li><a href="Home.php">Home</a></li>
             <li><a href="HTML/About_us.php">About us</a></li>
 
-            <!-- Conditionally display Services menu if logged in -->
             <?php if ($isLoggedIn): ?>
             <li class="dropdown">
                 <a href="#">Services</a>
@@ -43,7 +42,6 @@ $servicesUrl = "Counseling/Counseling.php"; // Updated to go directly to Counsel
 
             <li><a href="Feedback.php">Feedback</a></li>
 
-            <!-- Conditionally display Account menu if logged in -->
             <?php if ($isLoggedIn): ?>
                 <li><a href="Account/Accounts.php">Account</a></li>
             <?php else: ?>

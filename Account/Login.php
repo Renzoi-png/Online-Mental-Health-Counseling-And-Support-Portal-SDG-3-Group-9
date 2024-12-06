@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/footer.css" type="text/css">
     <link rel="stylesheet" href="../CSS/Header.css" type="text/css">
-    <link rel="stylesheet" href="../CSS/login.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/Login.css" type="text/css">
     <link rel="stylesheet" href="../CSS/Home.css" type="text/css">
-    <title>Main</title>
+    <title>Login</title>
 </head>
 <body class="BG3">   
 <?php include 'Registration.php'; ?>
@@ -43,7 +43,6 @@
     <form action="logindata.php" method="POST">
         <div class="input-group">
             <label for="email">Email</label>
-          
             <input type="email" id="email" name="email" placeholder="Enter your email" required value="<?= isset($_GET['email']) ? htmlspecialchars($_GET['email']) : '' ?>">
         </div>
         <div class="input-group">
@@ -71,6 +70,5 @@
         <p>&copy; Group 9</p>
     </div>
 </footer>
-    
 </body>
 </html>

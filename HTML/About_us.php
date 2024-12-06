@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Check if the user is logged in
 $is_logged_in = isset($_SESSION['user_id']);  
 ?>
 
@@ -28,7 +27,6 @@ $is_logged_in = isset($_SESSION['user_id']);
             <li><a href="../Home.php">Home</a></li>
             <li><a href="About_us.php">About us</a></li>
 
-            <!-- Only show the Services menu if the user is logged in -->
             <?php if ($is_logged_in): ?>
             <li class="dropdown">
                 <a href="#">Services</a>
@@ -40,7 +38,6 @@ $is_logged_in = isset($_SESSION['user_id']);
             </li>
             <?php endif; ?>
 
-            <!-- Only show the Feedback and Account links if the user is logged in -->
             <li><a href="../Feedback.php">Feedback</a></li>
 
             <?php if ($is_logged_in): ?>
