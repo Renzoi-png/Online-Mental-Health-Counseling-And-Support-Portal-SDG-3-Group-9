@@ -97,6 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_account'])) {
                     <li><a href="../Counseling/History.php">View History</a></li>
                     <li><a href="../Counseling/EditAppointment.php">Edit Appointments</a></li>
                 </ul>
+            </li>
             <?php if (!isset($_SESSION['user_id'])): ?>
                 <li><a href="Main.php">Register</a></li>
                 <li><a href="Login.php">Login</a></li>

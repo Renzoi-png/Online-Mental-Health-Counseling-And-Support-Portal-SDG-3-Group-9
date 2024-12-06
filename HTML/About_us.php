@@ -34,7 +34,7 @@ $is_logged_in = isset($_SESSION['user_id']);
                     <li><a href="../Counseling/History.php">View History</a></li>
                     <li><a href="../Counseling/EditAppointment.php">Edit Appointments</a></li>
                 </ul>
-
+            </li>
           
             <?php if (!$is_logged_in): ?>
             <?php endif; ?>
