@@ -103,5 +103,39 @@
 .feedback-form select:focus {
     border-color: #007BFF;
 }
+.login-message {
+    background-color: #0000006e; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin: 20px auto; 
+    max-width: 600px; 
+    text-align: center; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.login-message h2 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.login-message p {
+    color: #ffffff;
+    font-size: 1em;
+}
+
+.login-message a {
+    color: #00ff6e5e;
+    text-decoration: none;
+    font-weight: bold; 
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.login-message a:hover {
+    text-decoration: underline; 
+    color: #00ff88;
+}
 
 
