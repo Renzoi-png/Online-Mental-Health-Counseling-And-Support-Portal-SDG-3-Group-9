@@ -2,7 +2,7 @@
 session_start();
 include 'Registration.php';
 
-// Check if the user is logged in
+
 if (!isset($_SESSION['user_id'])) {
     echo "You must be logged in to set an appointment.";
     exit();
@@ -17,13 +17,12 @@ try {
     $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Get form data
-    $user_id = $_SESSION['user_id']; // Get the logged-in user's ID
+    $user_id = $_SESSION['user_id'];
     $date = $_POST['date'];
     $time = $_POST['time'];
     $message = $_POST['message'];
 
-    // Insert appointment into the database
+
     $stmt = $pdo->prepare("INSERT INTO appointments (user_id, appointment_date, appointment_time, message) VALUES (:user_id, :date, :time, :message)");
     $stmt->bindParam(':user_id', $user_id);
     $stmt->bindParam(':date', $date);
@@ -39,3 +38,4 @@ try {
     echo "Database error: " . $e->getMessage();
 }
 ?>
+ 
