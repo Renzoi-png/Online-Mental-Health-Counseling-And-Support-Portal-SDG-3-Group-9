@@ -27,6 +27,7 @@
                     <li><a href="../Counseling/History.php">View History</a></li>
                     <li><a href="../Counseling/EditAppointment.php">Edit Appointments</a></li>
                 </ul>
+            </li>
             <li><a href="../Feedback.php">Feedback</a></li>
             <li><a href="../Account/Accounts.php">Account</a></li>
         </ul>
