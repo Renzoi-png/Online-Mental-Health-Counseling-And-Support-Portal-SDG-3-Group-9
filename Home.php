@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+
+$isLoggedIn = isset($_SESSION['user_id']);  
+
+
+$registerUrl = "Account/Main.php";  
+$servicesUrl = "Services.php"; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +20,6 @@
     <title>Main</title>
 </head>
 <body class="BG2">
-<?php include 'Account/Registration.php'; ?>
 
 <header>
     <div class="icon">
@@ -40,11 +50,11 @@
                 <h4>Your journey to mental wellness begins here.</h4>
             </div>
 
-            
-
             <div class="Button-move">
                 <div class="button-container">
-                    <a href="Main.php" class="start-now-button">Click to Start</a>
+                    <a href="<?php echo $isLoggedIn ? $servicesUrl : $registerUrl; ?>" class="start-now-button">
+                        <?php echo $isLoggedIn ? "Click to Start" : "Register to Start"; ?>
+                    </a>
                     <div class="arrow"></div>
                 </div>
             </div>
@@ -53,66 +63,57 @@
 </main>
 
 <div class="additional-info">
-                <h2>Why Choose Online Counseling?</h2>
-                <p>
-                    Mental health is essential to overall well-being, and seeking support is the first step towards recovery and growth. E-Mind Care offers online counseling that allows you to access professional mental health services from the comfort of your home. 
-                    Whether you’re dealing with stress, anxiety, depression, relationship challenges, or simply need someone to talk to, our counselors are here to help you navigate life’s challenges.
-                </p>
+    <h2>Why Choose Online Counseling?</h2>
+    <p>
+        Mental health is essential to overall well-being, and seeking support is the first step towards recovery and growth. E-Mind Care offers online counseling that allows you to access professional mental health services from the comfort of your home. 
+        Whether you’re dealing with stress, anxiety, depression, relationship challenges, or simply need someone to talk to, our counselors are here to help you navigate life’s challenges.
+    </p>
                 
-                <h2>Our Services Include:</h2>
-                <ul>
-                    <li><strong>Online Therapy Sessions:</strong> One-on-one counseling sessions with licensed professionals via video, phone, or chat.</li>
-                    <li><strong>Group Therapy:</strong> Join group counseling sessions to share experiences and receive support from others.</li>
-                    <li><strong>Self-Care Tools:</strong> Access self-help articles, exercises, and resources designed to promote mental well-being.</li>
-                    <li><strong>Crisis Support:</strong> Immediate help during moments of crisis, available through our emergency response team.</li>
-                    <li><strong>Workshops & Webinars:</strong> Participate in mental health workshops and webinars to gain deeper insights and coping strategies.</li>
-                </ul>
+    <h2>How E-Mind Care Works</h2>
+    <p>
+        Our platform is user-friendly and simple to navigate. Here’s how it works:
+    </p>
+    <ol>
+        <li><strong>Sign Up:</strong> Create a free account to get started on your mental wellness journey.</li>
+        <li><strong>Choose a Counselor:</strong> Browse through our licensed mental health professionals to find the right match for your needs.</li>
+        <li><strong>Book a Session:</strong> Schedule your session at a time that works best for you. We offer flexible timings to accommodate different schedules.</li>
+        <li><strong>Attend Your Session:</strong> Join your session through our secure online platform. You can attend your session via video, phone, or text chat.</li>
+    </ol>
 
-                <h2>How E-Mind Care Works</h2>
-                <p>
-                    Our platform is user-friendly and simple to navigate. Here’s how it works:
-                </p>
-                <ol>
-                    <li><strong>Sign Up:</strong> Create a free account to get started on your mental wellness journey.</li>
-                    <li><strong>Choose a Counselor:</strong> Browse through our licensed mental health professionals to find the right match for your needs.</li>
-                    <li><strong>Book a Session:</strong> Schedule your session at a time that works best for you. We offer flexible timings to accommodate different schedules.</li>
-                    <li><strong>Attend Your Session:</strong> Join your session through our secure online platform. You can attend your session via video, phone, or text chat.</li>
-                </ol>
+    <h2>Benefits of Online Counseling</h2>
+    <ul>
+        <li><strong>Convenience:</strong> Receive professional counseling from the comfort of your home, without the need to commute.</li>
+        <li><strong>Confidentiality:</strong> Our platform is secure and your information is kept private. Your conversations with your counselor are completely confidential.</li>
+        <li><strong>Expert Support:</strong> Our counselors are licensed professionals with years of experience in various mental health fields.</li>
+        <li><strong>Accessibility:</strong> No matter where you are, you can access our services from any device with an internet connection.</li>
+    </ul>
 
-                <h2>Benefits of Online Counseling</h2>
-                <ul>
-                    <li><strong>Convenience:</strong> Receive professional counseling from the comfort of your home, without the need to commute.</li>
-                    <li><strong>Confidentiality:</strong> Our platform is secure and your information is kept private. Your conversations with your counselor are completely confidential.</li>
-                    <li><strong>Expert Support:</strong> Our counselors are licensed professionals with years of experience in various mental health fields.</li>
-                    <li><strong>Accessibility:</strong> No matter where you are, you can access our services from any device with an internet connection.</li>
-                </ul>
+    <h2>Your Path to Wellness Starts Now</h2>
+    <p>
+        At E-Mind Care, we believe in empowering individuals to take control of their mental health. Our online counseling services are designed to make mental health support easily accessible, affordable, and effective. 
+        Don't wait to seek the help you deserve. Take the first step towards healing and growth by scheduling your session today.
+    </p>
+</div>
 
-                <h2>Your Path to Wellness Starts Now</h2>
-                <p>
-                    At E-Mind Care, we believe in empowering individuals to take control of their mental health. Our online counseling services are designed to make mental health support easily accessible, affordable, and effective. 
-                    Don't wait to seek the help you deserve. Take the first step towards healing and growth by scheduling your session today.
-                </p>
-            </div>
+<div class="container">
+    <div class="box">
+        <img src="images/img4.jpg">
+        <span>E-Mind Care</span>
+    </div>
+    <div class="box">
+        <img src="images/img3.jpg">
+        <span>Attend Your Session</span>
+    </div>
+    <div class="box">
+        <img src="images/img2.jpg">
+        <span>Book a Session</span>
+    </div>
+    <div class="box">
+        <img src="images/img1.jpg">
+        <span>Choose a Counselor</span>
+    </div>
+</div>
 
-        <div class="container">
-            <div class="box">
-                <img src="images/img4.jpg">
-                <span>E-Mind</span>
-            </div>
-            <div class="box">
-                <img src="images/img3.jpg">
-                <span>E-Mind</span>
-            </div>
-            <div class="box">
-                <img src="images/img2.jpg">
-                <span>E-Mind</span>
-            </div>
-            <div class="box">
-                <img src="images/img1.jpg">
-                <span>E-Mind</span>
-            </div>
-        </div>
-            
 <footer>
     <div class="footer-content">
         <nav class="footer-nav">
