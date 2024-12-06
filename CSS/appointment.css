@@ -1,0 +1,138 @@
+.appointment-form {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    padding-right: 40px;
+    background-color: #0000006e;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 100px auto;
+}
+
+.appointment-form h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.appointment-form label {
+    font-size: 14px;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.appointment-form input,
+.appointment-form textarea,
+.appointment-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.appointment-form input:focus,
+.appointment-form textarea:focus,
+.appointment-form select:focus {
+    border-color: #d4a6ffad;
+}
+
+.appointment-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff0077;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-form button:hover {
+    background-color: #b3005c;
+}
+
+.appointment-form #response-message {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+.appointment-history {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    color: #ffffff;
+    padding: 30px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.appointment-history h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.sorting-options {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sorting-options label {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.sorting-options select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.sorting-options select:focus {
+    border-color: #d4a6ffad;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+table th {
+    background-color: #d4a6ffad;
+    color: #ffffff;
+}
+
+table tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+p {
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+}

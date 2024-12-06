@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/footer.css" type="text/css">
     <link rel="stylesheet" href="../CSS/Header.css" type="text/css">
-    <link rel="stylesheet" href="../CSS/home.css" type="text/css">
-    <link rel="stylesheet" href="../CSS/appointments.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/Home.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/appointment.css" type="text/css">
     <title>Counseling Appointment</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -30,7 +30,7 @@
         });
     </script>
 </head>
-<body class="BG3">
+<body class="BG5">
     <?php 
     session_start(); 
 
@@ -67,14 +67,12 @@
                 <li class="dropdown">
                 <a href="#">Services</a>
                 <ul class="dropdown-menu">
-                    <li><a href="Counseling.php">Counseling</a></li>
-                    <li><a href="History.php">View History</a></li>
-                    <li><a href="EditAppointment.php">Edit Appointments</a></li>
+                    <li><a href="../Counseling/Counseling.php">Counseling</a></li>
+                    <li><a href="../Counseling/History.php">View History</a></li>
+                    <li><a href="../Counseling/EditAppointment.php">Edit Appointments</a></li>
                 </ul>
-            </li>
-
-
-                <li><a href="Account/Accounts.php">Account</a></li>
+                <li><a href="../Feedback.php">Feedback</a></li>
+                <li><a href="../Account/Accounts.php">Account</a></li>
             </ul>
         </nav>
     </header>

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../CSS/footer.css" type="text/css">
     <link rel="stylesheet" href="../CSS/Header.css" type="text/css">
     <link rel="stylesheet" href="../CSS/login.css" type="text/css">
-    <link rel="stylesheet" href="../CSS/home.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/Home.css" type="text/css">
     <title>Main</title>
 </head>
 <body class="BG3">   
