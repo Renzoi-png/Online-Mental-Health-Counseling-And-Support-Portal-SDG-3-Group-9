@@ -117,7 +117,7 @@
 
 
 
-.BG1, .BG2, .BG3 {
+.BG1, .BG2, .BG3, .BG4, .BG5, .BG6{
     background-image: url('../images/BG1.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -131,6 +131,15 @@
 }
 .BG3 {
     background-image: url('../images/BG3.jpg');
+}
+.BG4 {
+    background-image: url('../images/BG4.jpg');
+}
+.BG5 {
+    background-image: url('../images/BG5.jpg');
+}
+.BG6 {
+    background-image: url('../images/BG6.jpg');
 }
 .button-container {
     display: flex;
