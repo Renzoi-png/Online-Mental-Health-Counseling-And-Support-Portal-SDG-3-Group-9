@@ -9,10 +9,10 @@ $is_logged_in = isset($_SESSION['user_id']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/fgiooter.css">
-    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/Header.css">
     <link rel="stylesheet" href="CSS/home.css">
-    <link rel="stylesheet" href="CSS/feedbacks.css">
+    <link rel="stylesheet" href="CSS/Feedbacks.css">
     <title>Feedback</title>
 </head>
 <body class="BG2">
@@ -27,7 +27,13 @@ $is_logged_in = isset($_SESSION['user_id']);
         <ul>
             <li><a href="Home.php">Home</a></li>
             <li><a href="HTML/About_us.php">About us</a></li>
-            <li><a href="#">Services</a></li>
+            <li class="dropdown">
+                <a href="#">Services</a>
+                <ul class="dropdown-menu">
+                    <li><a href="Counseling/Counseling.php">Counseling</a></li>
+                    <li><a href="Counseling/History.php">View History</a></li>
+                    <li><a href="Counseling/EditAppointment.php">Edit Appointments</a></li>
+                </ul>
             <li><a href="Feedback.php">Feedback</a></li>
 
             <?php if ($is_logged_in): ?>

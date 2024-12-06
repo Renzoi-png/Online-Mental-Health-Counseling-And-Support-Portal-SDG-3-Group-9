@@ -33,7 +33,8 @@
     outline: none;
     transition: border-color 0.3s ease;
     font-size: 14px;
-    background-color: #ffffff;
+    background-color: #ffffff; 
+    color: #000000; 
 }
 
 .feedback-form input:focus,
@@ -48,8 +49,8 @@
 .feedback-form button {
     width: 100%;
     padding: 12px;
-    background-color: #00ffc8;
-    color: white;
+    background-color: #00ff8c;
+    color: #ffffff;
     font-size: 16px;
     font-weight: bold;
     border: none;
@@ -79,30 +80,14 @@
     transition: border-color 0.3s ease;
     font-size: 14px;
     background-color: #ffffff;
+    color: #000000;
     cursor: pointer;
 }
 
 .feedback-form select:focus {
-    border-color: #007BFF;
+    border-color: #5eff00;
 }
 
-.feedback-form select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease;
-    font-size: 14px;
-    background-color: #ffffff;
-    cursor: pointer;
-    font-family:'Georgia';
-}
-
-.feedback-form select:focus {
-    border-color: #007BFF;
-}
 .login-message {
     background-color: #0000006e; 
     border-radius: 8px; 
@@ -115,19 +100,13 @@
     margin-bottom: 200px;
 }
 
-.login-message h2 {
-    color: #ffffff;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-}
-
-.login-message p {
-    color: #ffffff;
-    font-size: 1em;
+.login-message h2,
+.login-message p,
+.login-message a {
+    color: #000000;
 }
 
 .login-message a {
-    color: #00ff6e5e;
     text-decoration: none;
     font-weight: bold; 
     transition: color 0.3s ease, text-decoration 0.3s ease;
@@ -138,4 +117,7 @@
     color: #00ff88;
 }
 
+p {
+    color: white;
+}
 

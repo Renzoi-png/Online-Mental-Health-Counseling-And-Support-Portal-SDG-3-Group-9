@@ -15,7 +15,7 @@ $servicesUrl = "Services.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/footer.css">
-    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/Header.css">
     <link rel="stylesheet" href="CSS/home.css">
     <title>Main</title>
 </head>
@@ -30,7 +30,14 @@ $servicesUrl = "Services.php";
         <ul>
             <li><a href="Home.php">Home</a></li>
             <li><a href="HTML/About_us.php">About us</a></li>
-            <li><a href="#">Services</a></li>
+            <li class="dropdown">
+                <a href="#">Services</a>
+                <ul class="dropdown-menu">
+                    <li><a href="Counseling/Counseling.php">Counseling</a></li>
+                    <li><a href="Counseling/History.php">View History</a></li>
+                    <li><a href="Counseling/EditAppointment.php">Edit Appointments</a></li>
+                </ul>
+            </li>
             <li><a href="Feedback.php">Feedback</a></li>
             <li><a href="Account/Accounts.php">Account</a></li>
         </ul>

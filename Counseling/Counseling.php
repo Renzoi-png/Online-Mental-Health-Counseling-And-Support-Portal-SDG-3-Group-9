@@ -10,7 +10,7 @@
     <title>Main</title>
 </head> 
 <body class="BG3">
-<?php include 'Registration.php'; ?>
+<?php include '../Account/Registration.php'; ?>
 
 <header>
 
