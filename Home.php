@@ -40,8 +40,19 @@
                 <h4>Your journey to mental wellness begins here.</h4>
             </div>
 
-            <!-- New Additional Information Section -->
-            <div class="additional-info">
+            
+
+            <div class="Button-move">
+                <div class="button-container">
+                    <a href="Main.php" class="start-now-button">Click to Start</a>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div class="additional-info">
                 <h2>Why Choose Online Counseling?</h2>
                 <p>
                     Mental health is essential to overall well-being, and seeking support is the first step towards recovery and growth. E-Mind Care offers online counseling that allows you to access professional mental health services from the comfort of your home. 
@@ -83,16 +94,25 @@
                 </p>
             </div>
 
-            <div class="Button-move">
-                <div class="button-container">
-                    <a href="Main.php" class="start-now-button">Click to Start</a>
-                    <div class="arrow"></div>
-                </div>
+        <div class="container">
+            <div class="box">
+                <img src="images/img4.jpg">
+                <span>E-Mind</span>
+            </div>
+            <div class="box">
+                <img src="images/img3.jpg">
+                <span>E-Mind</span>
+            </div>
+            <div class="box">
+                <img src="images/img2.jpg">
+                <span>E-Mind</span>
+            </div>
+            <div class="box">
+                <img src="images/img1.jpg">
+                <span>E-Mind</span>
             </div>
         </div>
-    </section>
-</main>
-
+            
 <footer>
     <div class="footer-content">
         <nav class="footer-nav">

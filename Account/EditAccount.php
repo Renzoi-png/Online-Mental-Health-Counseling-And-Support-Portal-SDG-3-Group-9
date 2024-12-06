@@ -1,8 +1,8 @@
 <?php 
 session_start();
-include 'Registration.php'; // Include your Registration script
+include 'Registration.php'; 
 
-// Check if user is logged in, otherwise redirect to Login page
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: Login.php");
     exit();
@@ -17,7 +17,6 @@ try {
     $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Retrieve user information
     $stmt = $pdo->prepare("SELECT username, email, password FROM users WHERE id = :id");
     $stmt->bindParam(':id', $_SESSION['user_id']);
     $stmt->execute();
@@ -27,25 +26,24 @@ try {
     die("Database connection failed: " . $e->getMessage());
 }
 
-// Handle account update request
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get posted form data
+
     $newUsername = $_POST['username'];
     $newEmail = $_POST['email'];
-    $password = $_POST['password']; // Get the entered password
+    $password = $_POST['password'];
 
-    // Verify entered password against the stored password hash
+
     if (!password_verify($password, $user['password'])) {
         $error = "Incorrect password. Please try again.";
     } else {
-        // Update the username and email in the database
+
         $updateStmt = $pdo->prepare("UPDATE users SET username = :username, email = :email WHERE id = :id");
         $updateStmt->bindParam(':username', $newUsername);
         $updateStmt->bindParam(':email', $newEmail);
         $updateStmt->bindParam(':id', $_SESSION['user_id']);
 
         if ($updateStmt->execute()) {
-            // Redirect to Account page after successful update
+
             header("Location: Accounts.php");
             exit();
         } else {
@@ -78,7 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <li><a href="../HTML/About_us.php">About us</a></li>
             <li><a href="#">Services</a></li>
 
-            <!-- Only show Register and Login if the user is NOT logged in -->
             <?php if (!isset($_SESSION['user_id'])): ?>
                 <li><a href="Main.php">Register</a></li>
                 <li><a href="Login.php">Login</a></li>
@@ -86,7 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <li><a href="../Feedback.php">Feedback</a></li>
 
-            <!-- Show Account link if the user is logged in -->
             <?php if (isset($_SESSION['user_id'])): ?>
                 <li><a href="Accounts.php">Account</a></li>
             <?php endif; ?>
@@ -97,8 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <main>
     <div class="edit-account">
         <h2>Edit Account Information</h2>
-        
-        <!-- Display error if there's any -->
+
         <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
 
         <form action="" method="post">
@@ -108,7 +103,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="email">Email</label>
             <input type="email" id="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" required>
 
-            <!-- Password input field -->
             <label for="password">Confirm Password</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
 

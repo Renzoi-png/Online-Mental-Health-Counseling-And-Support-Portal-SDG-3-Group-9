@@ -28,7 +28,6 @@
 <div class="login-form-container">
     <h2>Login</h2>
 
-    <!-- Display error message if login failed -->
     <?php if (isset($_GET['error'])): ?>
         <div class="error-message">
             <?php
@@ -44,7 +43,7 @@
     <form action="logindata.php" method="POST">
         <div class="input-group">
             <label for="email">Email</label>
-            <!-- Retain the email value if login failed -->
+          
             <input type="email" id="email" name="email" placeholder="Enter your email" required value="<?= isset($_GET['email']) ? htmlspecialchars($_GET['email']) : '' ?>">
         </div>
         <div class="input-group">

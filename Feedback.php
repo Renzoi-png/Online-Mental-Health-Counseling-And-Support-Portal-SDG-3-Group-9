@@ -12,7 +12,7 @@ $is_logged_in = isset($_SESSION['user_id']);
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/home.css">
-    <link rel="stylesheet" href="CSS/feedback.css">
+    <link rel="stylesheet" href="CSS/feedbacks.css">
     <title>Feedback</title>
 </head>
 <body class="BG2">
@@ -40,14 +40,14 @@ $is_logged_in = isset($_SESSION['user_id']);
 </header>
 
 <main>
-    <!-- Login Message for Users who are NOT Logged In -->
+
     <?php if (!$is_logged_in): ?>
         <div class="login-message">
             <h2>💬 You need to log in to submit feedback!</h2>
             <p>Please <a href="Account/Login.php">log in</a> to provide feedback. We’d love to hear your thoughts!</p>
         </div>
     <?php else: ?>
-        <!-- Feedback Form for Logged In Users -->
+
         <div class="feedback-form">
             <h1>We value your feedback!</h1>
             <p>Your feedback helps us improve our services. Please share your thoughts below:</p>

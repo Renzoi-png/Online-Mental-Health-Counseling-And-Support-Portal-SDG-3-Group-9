@@ -3,7 +3,6 @@ session_start();
 include 'Registration.php';
 
 
-// Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: Login.php");
     exit();
@@ -18,7 +17,7 @@ try {
     $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Fetch user data from database
+
     $stmt = $pdo->prepare("SELECT username, email, created_at FROM users WHERE id = :id");
     $stmt->bindParam(':id', $_SESSION['user_id']);
     $stmt->execute();

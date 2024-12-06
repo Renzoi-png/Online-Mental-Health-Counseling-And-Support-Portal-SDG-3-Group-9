@@ -47,15 +47,24 @@ $is_logged_in = isset($_SESSION['user_id']);
         <div class="about-us-container">
             <div class="team-member">
                 <img src="../images/RENZ.jpg" alt="Team Member 1" class="team-image">
-                <p>Renz R. Lopez</p>
+                <p class ="info">Renz R. Lopez</p>
+                <p class="info">
+                    Leader
+                </p>
             </div>
             <div class="team-member">
                 <img src="../images/JANNA.jpg" alt="Team Member 2" class="team-image">
-                <p>Janna D. Baluyot</p>
+                <p class ="info">Janna D. Baluyot</p>
+                <p class="info">
+                    Member
+                </p>
             </div>
             <div class="team-member">
-                <img src="../images/HOWARD.jpg" alt="Team Member 3" class="team-image">
-                <p>Howard C. Guieb</p>
+                <img src="../images/howard.jpg" alt="Team Member 3" class="team-image">
+                <p class ="info">Howard C. Guieb</p>
+                <p class="info">
+                    Member
+                </p>
             </div>
         </div>
     </section>
