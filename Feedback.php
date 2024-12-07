@@ -1,7 +1,8 @@
 <?php  
 session_start(); 
 
-$isLoggedIn = isset($_SESSION['user_id']);
+// Check if the user is logged in
+$is_logged_in = isset($_SESSION['user_id']);
 ?>
 
 <!DOCTYPE html>
@@ -23,30 +24,31 @@ $isLoggedIn = isset($_SESSION['user_id']);
     <div class="icon">
         <img src="images/Icon.png" alt="logo" width="120" height="120">
     </div>
+
     <nav>
         <ul>
             <li><a href="Home.php">Home</a></li>
             <li><a href="HTML/About_us.php">About us</a></li>
-            <li class="dropdown">
-                <a href="#">Services</a>
-                <?php if ($isLoggedIn): ?>
+
+            <!-- Show the Services menu only if the user is logged in -->
+            <?php if ($is_logged_in): ?>
+                <li class="dropdown">
+                    <a href="#">Services</a>
                     <ul class="dropdown-menu">
                         <li><a href="Counseling/Counseling.php">Counseling</a></li>
                         <li><a href="Counseling/History.php">View History</a></li>
                         <li><a href="Counseling/EditAppointment.php">Edit Appointments</a></li>
                     </ul>
-                <?php else: ?>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Login to access services</a></li>
-                    </ul>
-                <?php endif; ?>
-            </li>
+                </li>
+            <?php endif; ?>
+
             <li><a href="Feedback.php">Feedback</a></li>
 
-            <?php if ($isLoggedIn): ?>
+            <!-- Show the Account or Login link based on user login status -->
+            <?php if ($is_logged_in): ?>
                 <li><a href="Account/Accounts.php">Account</a></li>
             <?php else: ?>
-                <li><a href="Account/Login.php">Login</a></li>
+                <li><a href="Account/Login.php">Login/Register</a></li>
             <?php endif; ?>
         </ul>
     </nav>
@@ -54,13 +56,15 @@ $isLoggedIn = isset($_SESSION['user_id']);
 
 <main>
 
-    <?php if (!$isLoggedIn): ?>
+    <!-- Display login message if the user is not logged in -->
+    <?php if (!$is_logged_in): ?>
         <div class="login-message">
             <h2>💬 You need to log in to submit feedback!</h2>
             <p>Please <a href="Account/Login.php">log in</a> to provide feedback. We’d love to hear your thoughts!</p>
         </div>
     <?php else: ?>
 
+        <!-- Display feedback form if the user is logged in -->
         <div class="feedback-form">
             <h1>We value your feedback!</h1>
             <p>Your feedback helps us improve our services. Please share your thoughts below:</p>
@@ -78,6 +82,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
             </form>
         </div>
     <?php endif; ?>
+
 </main>
 
 <footer>
@@ -96,5 +101,4 @@ $isLoggedIn = isset($_SESSION['user_id']);
 
 </body>
 </html>
-
 
