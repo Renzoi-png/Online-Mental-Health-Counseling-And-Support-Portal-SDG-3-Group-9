@@ -90,14 +90,11 @@ $servicesUrl = "Counseling/Counseling.php";
     </p>
     <ol>
         <li><strong>Sign Up:</strong> Create a free account to get started on your mental wellness journey.</li>
-        <li><strong>Choose a Counselor:</strong> Browse through our licensed mental health professionals to find the right match for your needs.</li>
         <li><strong>Book a Session:</strong> Schedule your session at a time that works best for you. We offer flexible timings to accommodate different schedules.</li>
-        <li><strong>Attend Your Session:</strong> Join your session through our secure online platform. You can attend your session via video, phone, or text chat.</li>
     </ol>
 
     <h2>Benefits of Online Counseling</h2>
     <ul>
-        <li><strong>Convenience:</strong> Receive professional counseling from the comfort of your home, without the need to commute.</li>
         <li><strong>Confidentiality:</strong> Our platform is secure and your information is kept private. Your conversations with your counselor are completely confidential.</li>
         <li><strong>Expert Support:</strong> Our counselors are licensed professionals with years of experience in various mental health fields.</li>
         <li><strong>Accessibility:</strong> No matter where you are, you can access our services from any device with an internet connection.</li>
@@ -117,7 +114,7 @@ $servicesUrl = "Counseling/Counseling.php";
     </div>
     <div class="box">
         <img src="images/img3.jpg">
-        <span>Attend Your Session</span>
+        <span>E-Mind Care</span>
     </div>
     <div class="box">
         <img src="images/img2.jpg">
@@ -125,7 +122,7 @@ $servicesUrl = "Counseling/Counseling.php";
     </div>
     <div class="box">
         <img src="images/img1.jpg">
-        <span>Choose a Counselor</span>
+        <span>E-Mind Care</span>
     </div>
 </div>
 
