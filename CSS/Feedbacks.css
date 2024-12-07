@@ -1,0 +1,123 @@
+.feedback-form {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    padding-right: 40px;
+    background-color: #0000006e;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 100px auto;
+}
+
+.feedback-form h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.feedback-form label {
+    font-size: 14px;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    font-size: 14px;
+    background-color: #ffffff; 
+    color: #000000; 
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+    border-color: #007BFF;
+}
+
+.feedback-form textarea {
+    resize: vertical;
+}
+
+.feedback-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00ff8c;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-form button:hover {
+    background-color: #00ca6c;
+}
+
+.feedback-form .success-message {
+    text-align: center;
+    color: #00ff7f;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.feedback-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+}
+
+.feedback-form select:focus {
+    border-color: #5eff00;
+}
+
+.login-message {
+    background-color: #0000006e; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin: 20px auto; 
+    max-width: 600px; 
+    text-align: center; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.login-message h2,
+.login-message p,
+.login-message a {
+    color: #000000;
+}
+
+.login-message a {
+    text-decoration: none;
+    font-weight: bold; 
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.login-message a:hover {
+    text-decoration: underline; 
+    color: #00ff88;
+}
+
+p {
+    color: white;
+}
+
